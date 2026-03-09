@@ -1,1 +1,175 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Russo synchro 400';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/russo-one.woff2') format('woff2');
+}
+
+.universe-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.universe {
+  position: relative;
+  display: flex;
+  width: 364px;
+  height: 364px;
+  border: 0;
+  overflow: visible;
+}
+
+@media only screen and (max-width: 1023px) {
+  .universe {
+    width: 364px;
+    height: 364px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .universe {
+    width: 50vw;
+    height: 50vw;
+  }
+}
+
+.moon,
+.planetoid,
+.planet,
+.galaxy {
+  border-radius: 50%;
+  border: 2px solid #7fff00;
+  background-color: #000000;
+}
+
+.planetoid.top {
+  position: absolute;
+  top: 10%;
+  left: 12%;
+  width: 20px;
+  height: 20px;
+  overflow: visible;
+  transform-origin: -50% -50%;
+  animation: icon4planet 10s linear 0s infinite;
+}
+
+.planetoid.top::after {
+  content: '';
+  position: absolute;
+  top: 83%;
+  left: -48%;
+  width: 3px;
+  height: 3px;
+  border: 2px solid #7fff00;
+  border-radius: 50%;
+}
+
+.planetoid.middle {
+  position: absolute;
+  top: 35%;
+  left: 54%;
+  width: 15%;
+  height: 15%;
+  overflow: visible;
+  transform-origin: -50% 100%;
+  animation: icon4planet 10s linear 0s infinite;
+}
+
+.planetoid.middle::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 50%;
+  padding-top: 40.3%;
+  border: 2px solid #7fff00;
+  border-radius: 50%;
+  background: #000000;
+  transform-origin: 50% 50%;
+  animation: icon4planet 10s linear 0s infinite;
+}
+
+.planetoid.bottom {
+  position: absolute;
+  top: 61%;
+  left: 31%;
+  width: 9%;
+  height: 9%;
+  overflow: visible;
+  transform-origin: 150% -100%;
+  animation: icon4planet 10s linear 0s infinite;
+}
+
+.planetoid.bottom::after {
+  content: '';
+  position: absolute;
+  top: -28%;
+  left: 122%;
+  width: 1%;
+  height: 1%;
+  border: 2px solid #7fff00;
+  border-radius: 50%;
+  transform-origin: 500% 500%;
+  animation: icon4planet 8s linear 0s infinite;
+}
+
+.planet {
+  position: absolute;
+  top: 20%;
+  left: 18%;
+  width: 65%;
+  height: 65%;
+  overflow: visible;
+  animation: icon4planet 5s linear 0s infinite;
+}
+
+.planet::after {
+  content: '';
+  position: absolute;
+  top: 75%;
+  left: 75%;
+  width: 20%;
+  height: 20%;
+  border: 2px solid #7fff00;
+  border-radius: 50%;
+  background: #000000;
+}
+
+.galaxy {
+  position: absolute;
+  top: -25%;
+  left: 90%;
+  width: 0%;
+  height: 45%;
+  box-shadow: 0 0 80px 10px #7fff00;
+  overflow: visible;
+  animation: icon4planet 1.5s cubic-bezier(1, 0.5, 1, 0.9) 0s infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.core {
+  width: 20px;
+  height: 20px;
+  background-color: #7fff00;
+  border-radius: 50%;
+}
+
+@keyframes icon4planet {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.universe-wrapper-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
